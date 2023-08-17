@@ -1,6 +1,7 @@
-import 'package:first_assignment/home/home.dart';
 import 'package:flutter/material.dart';
 
+import 'home/home.dart';
+
 var routes = {
-  '/': (BuildContext context) => HomeScreen(),
+  '/': (BuildContext context) => const HomeScreen(),
 };
