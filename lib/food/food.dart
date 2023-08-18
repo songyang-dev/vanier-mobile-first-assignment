@@ -21,7 +21,11 @@ class FoodScreen extends StatelessWidget {
               ),
             ),
           ),
-          Image.asset(imagePath),
+          Expanded(
+              child: Image.asset(
+            imagePath,
+            fit: BoxFit.contain,
+          )),
           Padding(
             padding: const EdgeInsets.all(16.0),
             child: Text(
@@ -29,7 +33,6 @@ class FoodScreen extends StatelessWidget {
               style: Theme.of(context).textTheme.bodyMedium,
             ),
           ),
-          const Divider(),
           ElevatedButton.icon(
             onPressed: () => Navigator.pop(context),
             icon: const Icon(
@@ -52,6 +55,7 @@ class FoodCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Card(
+      elevation: 2.0,
       child: InkWell(
         onTap: () {
           Navigator.push(
@@ -66,7 +70,7 @@ class FoodCard extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.center,
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
-            Image.asset(imagePath),
+            Expanded(child: Image.asset(imagePath, fit: BoxFit.contain)),
             Align(
               alignment: Alignment.center,
               heightFactor: 3,
